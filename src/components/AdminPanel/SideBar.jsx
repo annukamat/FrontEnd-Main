@@ -9,7 +9,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
@@ -18,9 +17,10 @@ import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import useStyles from "./AdminPanelStyle";
 import NavItems from "./NavItems";
+import AdminProfile from "../../Image/AdminProfile.jpeg";
+import Avatar from "@material-ui/core/Avatar";
 
 function SideBar() {
-  
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -102,7 +102,8 @@ function SideBar() {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <Avatar alt="Profile pic" src={AdminProfile} />
+          {/* <AccountCircle /> */}
         </IconButton>
         <p>Profile</p>
       </MenuItem>
@@ -123,7 +124,7 @@ function SideBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Admin Panel
+            Admin Portal
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -158,7 +159,8 @@ function SideBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <Avatar alt="Profile pic" src={AdminProfile} />
+              {/* <AccountCircle /> */}
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
@@ -179,7 +181,6 @@ function SideBar() {
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
-           
             variant="temporary"
             anchor={theme.direction === "rtl" ? "right" : "left"}
             open={mobileOpen}
@@ -191,7 +192,7 @@ function SideBar() {
               keepMounted: true, // Better open performance on mobile.
             }}
           >
-            <NavItems/>
+            <NavItems />
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
@@ -202,7 +203,7 @@ function SideBar() {
             variant="permanent"
             open
           >
-            <NavItems/>
+            <NavItems />
           </Drawer>
         </Hidden>
       </nav>

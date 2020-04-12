@@ -22,8 +22,10 @@ function NavItems() {
 
   return (
     <div>
-      <div className={classes.toolbar} />
-      <Divider />
+      <div className={classes.toolbar}>
+      <div className={classes.toptext} >Admin Portal</div>
+      </div>
+     
       <List>
         {["Dashboard", "Mails", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>

@@ -110,6 +110,14 @@ const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
+  toptext:{
+    textAlign:'center',
+    fontSize:'2rem',
+    opacity:'.4',
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+  }
 }));
 
 export default useStyles;
