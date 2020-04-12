@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import useStyles from "./AdminPanelStyle";
 
 import SideBar from "./SideBar";
+//stylesProvider inject our custom css first on a wrap component
 import { StylesProvider } from "@material-ui/core/styles";
 
 function AdminPanel(props) {

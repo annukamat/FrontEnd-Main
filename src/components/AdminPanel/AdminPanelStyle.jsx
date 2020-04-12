@@ -107,6 +107,9 @@ const useStyles = makeStyles((theme) => ({
       transform: "Scale(1.03)",
     },
   },
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
 }));
 
 export default useStyles;
