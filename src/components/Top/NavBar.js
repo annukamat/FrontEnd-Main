@@ -23,7 +23,7 @@ function NavBar() {
     <Nav className="mr-auto">
       <Nav.Link href="#home">Home</Nav.Link>
       <Nav.Link href="#link">GTBITians</Nav.Link>
-      <Nav.Link href="#link">Academics</Nav.Link>
+      <Nav.Link href="/admin">Admin Portal</Nav.Link>
       <Nav.Link href="#link">Societies</Nav.Link>
       <Nav.Link href="#link">Campus</Nav.Link>
       <Nav.Link href="#link">Facilities</Nav.Link>
