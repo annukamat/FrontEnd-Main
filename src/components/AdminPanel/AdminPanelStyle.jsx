@@ -13,11 +13,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
+    background: "#212a2f",
+    color: "#bdbdbd",
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
-      background: "white",
-      color: "#252222",
+     
     },
   },
   menuButton: {
@@ -62,8 +63,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
+      // marginLeft: theme.spacing(3),
+      width: "30rem",
     },
   },
   searchIcon: {
@@ -114,9 +115,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign:'center',
     fontSize:'2rem',
     opacity:'.4',
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
+    
   }
 }));
 
