@@ -103,7 +103,7 @@ function SideBar() {
           color="inherit"
           className="pr-2"
         >
-          <MoreIcon />
+        <MoreIcon/>
           {/* <Avatar alt="Profile pic" src={AdminProfile} /> */}
           {/* <AccountCircle /> */}
         </IconButton>
@@ -161,12 +161,7 @@ function SideBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <Avatar
-                sizes="30px"
-                alt="Profile pic"
-                style={{ width: "30px", height: "30px" }}
-                src={AdminProfile}
-              />
+              <Avatar alt="Profile pic" src={AdminProfile} />
               {/* <AccountCircle /> */}
             </IconButton>
           </div>
@@ -177,14 +172,9 @@ function SideBar() {
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
-              className="px-0"
             >
               {/* <MoreIcon /> */}
-              <Avatar
-                alt="Profile pic"
-                style={{ width: "30px", height: "30px" }}
-                src={AdminProfile}
-              />
+              <Avatar alt="Profile pic" src={AdminProfile} />
             </IconButton>
           </div>
         </Toolbar>

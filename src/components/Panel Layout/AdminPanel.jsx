@@ -8,7 +8,6 @@ import useStyles from "./AdminPanelStyle";
 import SideBar from "./SideBar";
 //stylesProvider inject our custom css first on a wrap component
 import { StylesProvider } from "@material-ui/core/styles";
-import UpdateTopNotice from "./subcomponents/TopNotice/UpdateTopNotice";
 
 function AdminPanel(props) {
   const classes = useStyles();
@@ -21,10 +20,7 @@ function AdminPanel(props) {
         <SideBar />
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <UpdateTopNotice/>
-          
-
-          {/* {[1, 2, 3, 4].map((val) => (
+          {[1, 2, 3, 4].map((val) => (
             <Typography paragraph key={val}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -40,7 +36,7 @@ function AdminPanel(props) {
               varius duis at consectetur lorem. Velit sed ullamcorper morbi
               tincidunt. Lorem donec massa sapien faucibus et molestie ac.
             </Typography>
-          ))} */}
+          ))}
         </main>
       </div>
     </StylesProvider>
