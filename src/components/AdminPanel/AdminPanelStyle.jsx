@@ -115,8 +115,12 @@ const useStyles = makeStyles((theme) => ({
   toptext:{
     textAlign:'center',
     fontSize:'2rem',
-    opacity:'.4',
-    
+    color:'#677380',
+    transition:'color 0.5s ease-out',
+    "&:hover":{
+        color:'white',
+        textDecoration:"none",
+    }
   }
 }));
 

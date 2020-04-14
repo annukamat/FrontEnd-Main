@@ -4,27 +4,43 @@ import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import useStyles from "./AdminPanelStyle";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  useRouteMatch,
+  Route,
+  Link,
+} from "react-router-dom";
 import SideBar from "./SideBar";
 //stylesProvider inject our custom css first on a wrap component
 import { StylesProvider } from "@material-ui/core/styles";
-import UpdateTopNotice from "./subcomponents/TopNotice/UpdateTopNotice";
+import AdminRoutes from "./AdminRoutes";
 
 function AdminPanel(props) {
   const classes = useStyles();
-
+  const { path, url } = useRouteMatch();
+  console.log(path, url);
   return (
-    <StylesProvider injectFirst>
-      <div className={classes.root}>
-        <CssBaseline />
-        {/* <SideBar /> */}
-        <SideBar />
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          <UpdateTopNotice/>
-          
+    <Router>
+      <StylesProvider injectFirst>
+        <div className={classes.root}>
+          <CssBaseline />
+          {/* <SideBar /> */}
+          <SideBar />
+          <main className={classes.content}>
+            <div className={classes.toolbar} />
 
-          {/* {[1, 2, 3, 4].map((val) => (
+            <Switch>
+              <Route exact path={path}>
+                <h1>Default</h1>
+                <Link to={`${url}/UpdateTopNotice`}>UpdateTopNotice</Link>
+              </Route>
+              <Route path={`${path}/:params`}>
+                <AdminRoutes />
+              </Route>
+            </Switch>
+
+            {/* {[1, 2, 3, 4].map((val) => (
             <Typography paragraph key={val}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -41,9 +57,10 @@ function AdminPanel(props) {
               tincidunt. Lorem donec massa sapien faucibus et molestie ac.
             </Typography>
           ))} */}
-        </main>
-      </div>
-    </StylesProvider>
+          </main>
+        </div>
+      </StylesProvider>
+    </Router>
   );
 }
 

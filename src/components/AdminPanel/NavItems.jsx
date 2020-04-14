@@ -11,6 +11,7 @@ import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import StarBorder from "@material-ui/icons/StarBorder";
 import Collapse from "@material-ui/core/Collapse";
+import { Link } from "react-router-dom";
 
 function NavItems() {
   const classes = useStyles();
@@ -23,9 +24,12 @@ function NavItems() {
   return (
     <div>
       <div className={classes.toolbar}>
-      <div className={classes.toptext} >Admin Portal</div>
+        <Link to="/admin" className={classes.toptext}>
+          {" "}
+          <div >Admin Portal</div>
+        </Link>
       </div>
-     
+
       <List>
         {["Dashboard", "Mails", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
