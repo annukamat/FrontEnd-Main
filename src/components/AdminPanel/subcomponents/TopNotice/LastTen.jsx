@@ -36,7 +36,7 @@ function LastTen() {
         </Typography>
         <List>
           {data.map((item) => (
-            <ListItem key={item.id}>
+            <ListItem key={item.id} className="p-0">
               <ListItemIcon>
                 <RadioButtonUncheckedIcon
                   fontSize={"small"}
