@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import InputTopNotice from "./InputTopNotice";
+import CurrentTopNotice from "./CurrentTopNotice";
 
 function UpdateTopNotice() {
   return (
@@ -9,6 +10,7 @@ function UpdateTopNotice() {
         Update Top Notice
       </Typography>
       <InputTopNotice />
+      <CurrentTopNotice/>
     </div>
   );
 }
