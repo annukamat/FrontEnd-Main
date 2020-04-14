@@ -16,6 +16,7 @@ import SideBar from "./SideBar";
 import { StylesProvider } from "@material-ui/core/styles";
 import AdminRoutes from "./AdminRoutes";
 
+
 function AdminPanel(props) {
   const classes = useStyles();
   const { path, url } = useRouteMatch();
@@ -34,6 +35,8 @@ function AdminPanel(props) {
               <Route exact path={path}>
                 <h1>Dashboard</h1>
                 <Link to={`${url}/UpdateTopNotice`}>UpdateTopNotice</Link>
+               
+                
               </Route>
               <Route path={`${path}/:params`}>
                 <AdminRoutes />
