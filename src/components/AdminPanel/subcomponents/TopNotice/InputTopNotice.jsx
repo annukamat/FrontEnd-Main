@@ -3,6 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import axios from 'axios'
 import Loader from "../../../Common/Loader";
+import domainurl from '../../../Common/Domain'
 
 function InputTopNotice() {
   const [val,setVal]=useState();
@@ -12,7 +13,7 @@ function InputTopNotice() {
     setActive(true)
     console.log("update called");
     axios({
-      url: "http://gtbit-backend.herokuapp.com/api/v1/upper-notice",
+      url: `${domainurl}/api/v1/upper-notice`,
       method: "post",
       headers: {
         Accept: "application/json",
@@ -48,7 +49,7 @@ function InputTopNotice() {
         value={val}
         onChange={e=>setVal(e.target.value)}
       />
-      <div className="d-flex justify-content-end justify-content-md-center">
+      <div className="d-flex justify-content-end">
         <Button color="primary" variant={"contained"} onClick={update}>
           Update
         </Button>

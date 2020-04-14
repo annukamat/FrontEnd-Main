@@ -1,1 +1,1 @@
-POST 
+https://gtbit-backend.herokuapp.com/api/v1/previous-notice-list
