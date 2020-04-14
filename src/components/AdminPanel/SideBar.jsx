@@ -80,7 +80,7 @@ function SideBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
+        <IconButton aria-label="show 4 new mails" color="inherit" className={classes.removebg}>
           <Badge badgeContent={4} color="secondary">
             <MailIcon />
           </Badge>
@@ -88,7 +88,7 @@ function SideBar() {
         <p className="mb-0">Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
+        <IconButton aria-label="show 11 new notifications" color="inherit" className={classes.removebg}>
           <Badge badgeContent={11} color="secondary">
             <NotificationsIcon />
           </Badge>
@@ -101,7 +101,7 @@ function SideBar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
-          className="pr-2"
+          className={classes.removebg+" pr-2"}
         >
           <MoreIcon />
           {/* <Avatar alt="Profile pic" src={AdminProfile} /> */}

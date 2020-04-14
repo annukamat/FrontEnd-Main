@@ -127,6 +127,11 @@ const useStyles = makeStyles((theme) => ({
         color:'white',
         textDecoration:"none",
     }
+  },
+  removebg:{
+    '&:hover':{
+      background:'none',
+    }
   }
 }));
 
