@@ -205,7 +205,7 @@ function SideBar() {
               keepMounted: true, // Better open performance on mobile.
             }}
           >
-            <NavItems />
+            <NavItems  click={handleDrawerToggle}/>
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">

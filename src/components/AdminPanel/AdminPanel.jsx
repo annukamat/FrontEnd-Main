@@ -32,7 +32,7 @@ function AdminPanel(props) {
 
             <Switch>
               <Route exact path={path}>
-                <h1>Default</h1>
+                <h1>Dashboard</h1>
                 <Link to={`${url}/UpdateTopNotice`}>UpdateTopNotice</Link>
               </Route>
               <Route path={`${path}/:params`}>

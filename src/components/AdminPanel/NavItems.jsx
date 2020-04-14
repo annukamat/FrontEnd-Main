@@ -13,33 +13,67 @@ import StarBorder from "@material-ui/icons/StarBorder";
 import Collapse from "@material-ui/core/Collapse";
 import { Link } from "react-router-dom";
 
-function NavItems() {
+function NavItems({click}) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const ToggleExpand = () => {
     setOpen(!open);
   };
-
+  const navitems = [
+    {
+      name: "Dashboard",
+      route: "/admin",
+      icon:<InboxIcon />
+    },
+    {
+      name: "Top Notice",
+      route: "/admin/UpdateTopNotice",
+      icon:<InboxIcon />
+    },
+    {
+      name: "Carousel",
+      route: "/admin/Carousel",
+      icon:<InboxIcon />
+    },
+    {
+      name: "Notice/Alerts",
+      route: "/admin/Notices",
+      icon:<InboxIcon />
+    },
+    {
+      name: "Events",
+      route: "/admin/Events",
+      icon:<InboxIcon />
+    },
+    {
+      name: "Important Links",
+      route: "/admin/ImportantLinks",
+      icon:<InboxIcon />
+    },
+  ];
   return (
     <div>
       <div className={classes.toolbar}>
         <Link to="/admin" className={classes.toptext}>
           {" "}
-          <div >Admin Portal</div>
+          <div>Admin Portal</div>
         </Link>
       </div>
 
       <List>
-        {["Dashboard", "Mails", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
+        {navitems.map((item, index) => (
+          <Link to={item.route} className={classes.hoverlight} key={index} onClick={click}>
+          <ListItem button >
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              {item.icon}
             </ListItemIcon>
-            <ListItemText primary={text} className={classes.hoverlight} />
+            <ListItemText primary={item.name} />
           </ListItem>
+          </Link>
         ))}
       </List>
+
       <List>
         <ListItem button onClick={ToggleExpand}>
           <ListItemIcon>
@@ -61,16 +95,7 @@ function NavItems() {
       </List>
 
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} className={classes.hoverlight} />
-          </ListItem>
-        ))}
-      </List>
+   
     </div>
   );
 }

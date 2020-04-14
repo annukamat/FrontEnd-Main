@@ -103,11 +103,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   hoverlight: {
-    transition: "transform .1s ease-in-out",
+    color: "#adb5bd",
     "&:hover": {
       color: "white",
-      transform: "Scale(1.03)",
+      textDecoration:"none",
     },
+    '& span':{
+      '&:hover':{
+        transition:'transform 0.15s ease-in-out',
+        transform:'Scale(1.07)'
+      }
+    }
   },
   nested: {
     paddingLeft: theme.spacing(4),
