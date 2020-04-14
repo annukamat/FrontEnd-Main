@@ -110,8 +110,8 @@ const useStyles = makeStyles((theme) => ({
     },
     '& span':{
       '&:hover':{
-        transition:'transform 0.15s ease-in-out',
-        transform:'Scale(1.07)'
+        transition:'transform 0.1s ease-in-out',
+        transform:'Scale(1.03)'
       }
     }
   },
