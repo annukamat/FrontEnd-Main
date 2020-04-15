@@ -1,3 +1,3 @@
-const domain ='https://gtbit-backend.herokuapp.com'
+const domain ='http://gtbit-backend.herokuapp.com'
 
 export default domain;

@@ -35,7 +35,7 @@ function InputTopNotice({ setAlert }) {
   };
 
   return (
-    <>
+    <div className="my-5">
       <Loader active={active} text={"Updating"}>
         <TextField
           fullWidth={true}
@@ -58,7 +58,7 @@ function InputTopNotice({ setAlert }) {
           </Button>
         </div>
       </Loader>
-    </>
+    </div>
   );
 }
 

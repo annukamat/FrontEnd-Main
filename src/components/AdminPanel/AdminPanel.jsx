@@ -15,9 +15,35 @@ import SideBar from "./SideBar";
 //stylesProvider inject our custom css first on a wrap component
 import { StylesProvider } from "@material-ui/core/styles";
 import AdminRoutes from "./AdminRoutes";
-import HeadingCard from "../Common/HeadingCard";
+import { Row, Col } from "react-bootstrap";
+import DashCard from "../Common/DashCard";
 
-
+const cards = [
+  {
+    heading: "Top Notice",
+    bgcolor: "rgb(139, 195, 74)",
+  },
+  {
+    heading: "Top Notice",
+    bgcolor: "#f44336",
+  },
+  {
+    heading: "Carousel",
+    bgcolor: "#9575CD",
+  },
+  {
+    heading: "Notices/Alerts",
+    bgcolor: "#FFB300",
+  },
+  {
+    heading: "Important links",
+    bgcolor: "#795548",
+  },
+  {
+    heading: "Events",
+    bgcolor: "#424242",
+  },
+];
 function AdminPanel(props) {
   const classes = useStyles();
   const { path, url } = useRouteMatch();
@@ -34,10 +60,19 @@ function AdminPanel(props) {
 
             <Switch>
               <Route exact path={path}>
-                <HeadingCard heading={'Dashboard'}/>
-                <Link to={`${url}/UpdateTopNotice`}>UpdateTopNotice</Link>
-               
-                
+                <Row>
+                  {cards.map((card) => (
+                    <Col
+                      xs={"12"}
+                      sm={"6"}
+                      md={"4"}
+                      key={card}
+                      className="my-3"
+                    >
+                      <DashCard heading={card.heading} bgcolor={card.bgcolor} />
+                    </Col>
+                  ))}
+                </Row>
               </Route>
               <Route path={`${path}/:params`}>
                 <AdminRoutes />
