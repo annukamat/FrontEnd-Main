@@ -7,7 +7,7 @@ import domainurl from "../../../Common/Domain";
 
 function InputTopNotice({ setAlert }) {
   const [val, setVal] = useState();
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
   const update = (e) => {
     e.preventDefault();
     setActive(true);
@@ -36,7 +36,7 @@ function InputTopNotice({ setAlert }) {
 
   return (
     <div className="my-5">
-      <Loader active={active} text={"Updating"}>
+      <Loader active={active}>
         <TextField
           fullWidth={true}
           autoFocus
