@@ -9,6 +9,7 @@ import HeadingCard from "../../../Common/HeadingCard";
 
 function UpdateTopNotice() {
   const [showAlert, setAlert] = React.useState();
+  const [lastTen,setLastTen]= React.useState([]);
   return (
     <div>
     <HeadingCard heading={'Update Top Notice'}/>
@@ -22,9 +23,9 @@ function UpdateTopNotice() {
         <div>
           <InputTopNotice setAlert={()=>setAlert(true)} />
           <Divider/>
-          <CurrentTopNotice />
-          <Divider/>
-          <LastTen />
+          <CurrentTopNotice setLastTen={setLastTen}/>
+          <Divider className="my-4"/>
+          <LastTen data={lastTen}/>
         </div>
       )}
     </div>

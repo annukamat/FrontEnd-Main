@@ -9,20 +9,20 @@ import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
 import axios from "axios";
 import domainurl from "../../../Common/Domain";
 
-function LastTen() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${domainurl}/api/v1/previous-notice-list`)
-      .then((res) => {
-        console.log(res);
-        if(res.status===200)
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+function LastTen({data}) {
+ // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${domainurl}/api/v1/previous-notice-list`)
+  //     .then((res) => {
+  //       console.log(res);
+  //       if(res.status===200)
+  //       setData(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   function converter(date) {
     let d = new Date(date);

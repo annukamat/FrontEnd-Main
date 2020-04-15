@@ -4,16 +4,18 @@ import Typography from "@material-ui/core/Typography";
 import Loader from "../../../Common/Loader";
 import domainurl from '../../../Common/Domain'
 
-function CurrentTopNotice() {
+function CurrentTopNotice({setLastTen}) {
   const [notice, SetNotice] = useState();
+ 
   useEffect(() => {
     axios
       .get(`${domainurl}/api/v1/upper-notice`)
       .then((res) => {
         console.log(res);
-        console.log(res.data[0].notice);
+        console.log(res.data.current_notice[0].notice);
         if(res.status===200)
-        SetNotice(res.data[0].notice);
+        SetNotice(res.data.current_notice[0].notice);
+        setLastTen(res.data.previous_notice)
       })
       .catch((err) => {
         console.log(err);
@@ -26,7 +28,7 @@ function CurrentTopNotice() {
           Current Top Notice
         </Typography>
         {notice}
-      </Loader>
+      </Loader >
     </div>
   );
 }

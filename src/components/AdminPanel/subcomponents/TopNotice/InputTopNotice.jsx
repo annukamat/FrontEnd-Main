@@ -7,7 +7,7 @@ import domainurl from "../../../Common/Domain";
 
 function InputTopNotice({ setAlert }) {
   const [val, setVal] = useState();
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const update = (e) => {
     e.preventDefault();
     setActive(true);
