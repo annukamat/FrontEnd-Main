@@ -15,6 +15,7 @@ import SideBar from "./SideBar";
 //stylesProvider inject our custom css first on a wrap component
 import { StylesProvider } from "@material-ui/core/styles";
 import AdminRoutes from "./AdminRoutes";
+import HeadingCard from "../Common/HeadingCard";
 
 
 function AdminPanel(props) {
@@ -33,7 +34,7 @@ function AdminPanel(props) {
 
             <Switch>
               <Route exact path={path}>
-                <h1>Dashboard</h1>
+                <HeadingCard heading={'Dashboard'}/>
                 <Link to={`${url}/UpdateTopNotice`}>UpdateTopNotice</Link>
                
                 

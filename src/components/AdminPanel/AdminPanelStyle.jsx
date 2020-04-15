@@ -28,7 +28,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
+  //toolbar: theme.mixins.toolbar,
+  toolbar:{
+    height:'40px',
+    [theme.breakpoints.up("sm")]:{
+      height:'50px',
+    }
+  },
   drawerPaper: {
     width: drawerWidth,
     background: "#212a2f",

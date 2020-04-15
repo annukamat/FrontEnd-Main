@@ -4,14 +4,14 @@ import InputTopNotice from "./InputTopNotice";
 import CurrentTopNotice from "./CurrentTopNotice";
 import LastTen from "./LastTen";
 import AfterRequestAlerts from "../../../Common/AfterRequestAlerts";
+import Divider from "@material-ui/core/Divider";
+import HeadingCard from "../../../Common/HeadingCard";
 
 function UpdateTopNotice() {
   const [showAlert, setAlert] = React.useState();
   return (
     <div>
-      <Typography variant="h4" gutterBottom className="mb-4 text-dark">
-        Update Top Notice
-      </Typography>
+    <HeadingCard heading={'Update Top Notice'}/>
       {showAlert ? (
         <AfterRequestAlerts
           type="success"
@@ -21,7 +21,9 @@ function UpdateTopNotice() {
       ) : (
         <div>
           <InputTopNotice setAlert={()=>setAlert(true)} />
+          <Divider/>
           <CurrentTopNotice />
+          <Divider/>
           <LastTen />
         </div>
       )}
