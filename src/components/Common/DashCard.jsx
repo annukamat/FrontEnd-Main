@@ -10,21 +10,21 @@ import Typography from "@material-ui/core/Typography";
 import CardHeader from "@material-ui/core/CardHeader";
 import IconButton from "@material-ui/core/IconButton";
 
-function DashCard({ heading, bgcolor }) {
+function DashCard({ heading, bgcolor ,icon}) {
   return (
     <>
-      <Card elevation={3} style={{ backgroundColor: bgcolor }}>
+      <Card elevation={3} style={{ backgroundColor: '#adb5bd' }}>
         <CardContent className="pb-0">
           <Row className="justify-content-center">
             <Col className="col-auto p-3 border d-flex align-items-center justify-content-center rounded-circle"
-            style={{ backgroundColor:'rgb(139, 195, 74,55)' }}
+            style={{ backgroundColor:'#d1e0eefc' }}
             >
-              <SystemUpdateIcon className="d-block" style={{ width: "4rem", height: "4rem" }} />
+              {icon}
             </Col>
           </Row>
           <Row>
-            <Col>
-              <Typography variant="h4" component="h3">
+            <Col className="d-flex justify-content-center mt-2">
+              <Typography variant="p" component="h3">
                 {heading}
               </Typography>
             </Col>

@@ -17,31 +17,37 @@ import { StylesProvider } from "@material-ui/core/styles";
 import AdminRoutes from "./AdminRoutes";
 import { Row, Col } from "react-bootstrap";
 import DashCard from "../Common/DashCard";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import ViewCarouselIcon from "@material-ui/icons/ViewCarousel";
+import ListAltIcon from "@material-ui/icons/ListAlt";
+import LinkIcon from "@material-ui/icons/Link";
+import EventIcon from "@material-ui/icons/Event";
 
 const cards = [
   {
     heading: "Top Notice",
-    bgcolor: "rgb(139, 195, 74)",
-  },
-  {
-    heading: "Top Notice",
     bgcolor: "#f44336",
+    icon: <NotificationsIcon className="d-block" style={{ width: "4rem", height: "4rem" }}/>,
   },
   {
     heading: "Carousel",
     bgcolor: "#9575CD",
+    icon: <ViewCarouselIcon className="d-block" style={{ width: "4rem", height: "4rem" }} />,
   },
   {
     heading: "Notices/Alerts",
     bgcolor: "#FFB300",
+    icon: <ListAltIcon className="d-block" style={{ width: "4rem", height: "4rem" }}/>,
   },
   {
     heading: "Important links",
     bgcolor: "#795548",
+    icon: <LinkIcon className="d-block" style={{ width: "4rem", height: "4rem" }} />,
   },
   {
     heading: "Events",
     bgcolor: "#424242",
+    icon: <EventIcon className="d-block" style={{ width: "4rem", height: "4rem" }} />,
   },
 ];
 function AdminPanel(props) {
@@ -66,10 +72,15 @@ function AdminPanel(props) {
                       xs={"12"}
                       sm={"6"}
                       md={"4"}
+                      lg={'3'}
                       key={card}
                       className="my-3"
                     >
-                      <DashCard heading={card.heading} bgcolor={card.bgcolor} />
+                      <DashCard
+                        heading={card.heading}
+                        bgcolor={card.bgcolor}
+                        icon={card.icon}
+                      />
                     </Col>
                   ))}
                 </Row>
