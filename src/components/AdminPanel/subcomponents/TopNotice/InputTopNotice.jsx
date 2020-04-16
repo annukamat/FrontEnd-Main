@@ -4,12 +4,17 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import Loader from "../../../Common/Loader";
 import domainurl from "../../../Common/Domain";
+import swalAlert from '../../../Common/SwalAlert'
 
-function InputTopNotice({ setAlert }) {
+function InputTopNotice({ style,refresh }) {
   const [val, setVal] = useState();
   const [active, setActive] = useState(false);
   const update = (e) => {
     e.preventDefault();
+    if(!val){
+      swalAlert('Notice Cannot be Empty !!',undefined,'info')
+      return;
+    }
     setActive(true);
     console.log("update called");
     axios({
@@ -26,16 +31,17 @@ function InputTopNotice({ setAlert }) {
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
-          setAlert();
+        
           setActive(false);
           setVal("");
+          swalAlert('Sucessfully Updated',undefined,'success',undefined,refresh)
         }
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div className="my-5">
+    <div className="my-5" style={style}>
       <Loader active={active}>
         <TextField
           fullWidth={true}
